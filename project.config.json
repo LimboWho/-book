@@ -1,0 +1,71 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.1",
+	"appid": "wx82544dc60f5430d5",
+	"projectname": "%E6%95%99%E6%9D%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F(%E7%9F%A5%E6%99%93%E7%89%88%EF%BC%89",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "ac",
+					"pathName": "pages/ac/ac",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价进入页面",
+					"pathName": "pages/accessable/accessable",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "查看评论页面",
+					"pathName": "pages/myevaluate_stu/myevaluate_stu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价页面",
+					"pathName": "pages/pingjiabiao/pingjiabiao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价进入页面",
+					"pathName": "pages/accessable/accessable",
+					"query": ""
+				}
+			]
+		}
+	}
+}

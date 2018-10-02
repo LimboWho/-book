@@ -1,0 +1,98 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-cells__title">教学计划</view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">周次:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="weekly" class="weui-input" placeholder="请输入周数" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">教学内容:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="content" class="weui-input" placeholder="请输入教学内容" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">目标:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="target"class="weui-input" placeholder="请输入目标" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">考核方式:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="examination"class="weui-input" placeholder="请输入考核方式" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">课外作业:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="homework" class="weui-input" placeholder="请输入课外作业" type="number" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">备注:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="note" class="weui-input" placeholder="请输入备注" type="number" />
+      </view>
+    </view>
+    <!--<view class="weui-btn-area">
+                <button class="weui-btn" type="primary" bindtap="addBook">开始录入</button>
+            </view>-->
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" formType="submit" bindtap="clickCheck">录入</button>
+    </view>
+    
+
+        <view class="weui-btn-area">
+      <button class="weui-btn" type="primary"bindtap="clickCheck2">查看所录信息</button>
+    </view>
+
+
+  </view>
+</form>
+
+ <!-- 弹出校对信息窗口 -->
+  <modal class="modal" hidden="{{hideModal}}" bindconfirm="modalSubmit" bindcancel="modalCancel"
+   confirmText="确认提交" cancelText="修正" showCancel="ture">
+    <view>
+    <text>录入结束后返回首页\n</text>
+      <text>您的教学计划如下：</text>
+    </view>
+<view>
+      <text>周次：</text>{{weekly}}</view>
+    <view>
+      <text>教学内容：</text>{{content}}</view>
+    <view>
+      <text>目标：</text>{{target}}</view>
+    <view>
+      <text>考核方式：</text>{{examination}}</view>
+    <view>
+      <text>课外作业：</text>{{homework}}</view>
+    <view>
+      <text>备注：</text>{{note}}</view>
+
+
+  </modal>

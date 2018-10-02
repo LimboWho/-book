@@ -1,0 +1,23 @@
+ <!--购书名单-->
+ 
+ <view class='history-table-wrap'>
+
+    <view class="table">
+      <view class="tr">
+          <view class="th th1">姓名</view>
+          <view class="th th3">学号</view>
+      </view>
+      <view class="tr">
+          <view class="td td1">达娃</view>
+          <view class="td td3">201710089196</view>
+      </view>
+            <view class="tr">
+          <view class="td td1">二娃</view>
+          <view class="td td3">201710089195</view>
+      </view>
+            <view class="tr">
+          <view class="td td1" >二狗子</view>
+          <view class="td td3">201710062235</view>
+      </view>
+    </view>
+ </view>

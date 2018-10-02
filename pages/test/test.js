@@ -1,0 +1,30 @@
+Page({
+ data:{
+  // text:"这是一个页面"
+  tip:'',
+  userName:'',
+  psw:''
+ },
+ formBindsubmit:function(e){
+  if(e.detail.value.userName.length==0||e.detail.value.psw.length==0){
+   this.setData({
+    tip:'提示：用户名和密码不能为空！',
+    userName:'',
+    psw:''
+   })
+  }else{
+   this.setData({
+    tip:'',
+    userName:'用户名：'+e.detail.value.userName,
+    psw:'密码：'+e.detail.value.psw
+   })
+  }
+ },
+ formReset:function(){
+  this.setData({
+   tip:'',
+   userName:'',
+   psw:''
+  })
+ }
+})

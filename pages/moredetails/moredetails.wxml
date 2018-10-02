@@ -1,0 +1,42 @@
+<!--教材详细信息-->
+ <view class='history-table-wrap'>
+    <view class="table">
+      <view class="tr">
+          <view class="th th1">属性</view>
+          <view class="th th3">详细信息</view>
+      </view>
+      <view class="tr">
+          <view class="td td1">序号</view>
+          <view class="td td3">1</view>
+      </view>
+            <view class="tr">
+          <view class="td td1">书名</view>
+          <view class="td td3">
+          <text>"{{name}}"</text></view>
+      </view>
+            <view class="tr">
+          <view class="td td1">出版社</view>
+          <view class="td td3">人民教育出版社</view>
+      </view>
+            <view class="tr">
+          <view class="td td1">ISBN</view>
+          <view class="td td3">12312445654</view>
+      </view>
+            <view class="tr">
+          <view class="td td1">作者</view>
+          <view class="td td3">谭浩强</view>
+      </view>
+            <view class="tr">
+          <view class="td td1">版次</view>
+          <view class="td td3">第三次</view>
+      </view>
+            <view class="tr">
+          <view class="td td1">出版年月</view>
+          <view class="td td3">2018年3月</view>
+      </view>
+            <view class="tr">
+          <view class="td td1">单价</view>
+          <view class="td td3">16.5</view>
+      </view>
+    </view>
+ </view>
