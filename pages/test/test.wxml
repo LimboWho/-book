@@ -1,17 +1,31 @@
-<form bindsubmit="formBindsubmit" bindreset="formReset">
- <view style="display:flex;">
-  <label>用户名：</label>
-  <input name="userName" placeholder="请输入用户名！" />
- </view>
- <view style="display:flex;">
-  <label>密码：</label>
-  <input name="psw" placeholder="请输入密码！" password="true" />
- </view>
- <view style="display:flex;margin-top:30px;">
-  <button style="width:30%;" formType="submit" >登录</button>
-  <button style="width:30%" formType="reset" >重置</button>
- </view>
-</form>
-<view>{{tip}}</view>
-<view>{{userName}}</view>
-<view>{{psw}}</view>
+<!--Pages/login/login.wxml-->
+<!--登陆界面-->
+<view class="container">
+  <view class="login-icon">
+    <image class="login-img" src="../../images/loginLog.jpg"></image>
+  </view>
+  <view class="login-from">
+ 
+    <!--账号-->
+    <view class="inputView">
+      <image class="nameImage" src="../../images/name.png"></image>
+      <label class="loginLab">账号</label>
+      <input class="inputText" placeholder="请输入学号或工号" bindinput="phoneInput" />
+    </view>
+    <view class="line"></view>
+ 
+    <!--密码-->
+    <view class="inputView">
+      <image class="keyImage" src="../../images/key.png"></image>
+      <label class="loginLab">密码</label>
+      <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+    </view>
+ 
+    <!--登录-->
+    <view class="loginBtnView">
+      <button class="loginBtn" type="primary" open-type='getUserInfo' size="{{primarySize}}" loading="{{loading}}"
+       plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button>
+    </view>
+    
+  </view>
+</view>

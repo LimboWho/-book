@@ -1,27 +1,23 @@
-//  var Bmob = require('../../utils/bmob.js');
-
+//var Bmob = require('../../utils/bmob.js');
 Page({
   data: {
     phone: '',
     password: ''
   },
-
   // 获取输入账号
-  phoneInput: function(e) {
+  phoneInput: function (e) {
     this.setData({
       phone: e.detail.value
     })
   },
-
   // 获取输入密码
-  passwordInput: function(e) {
+  passwordInput: function (e) {
     this.setData({
       password: e.detail.value
     })
   },
-
   // 登录
-  login: function() {
+  login: function () {
     if (this.data.phone.length == 0 || this.data.password.length == 0) {
       wx.showToast({
         title: '帐号和密码不能为空',
@@ -29,12 +25,13 @@ Page({
         duration: 2000
       })
     } else {
-      const query = Bmob.Query("users");
-      query.equalTo("id", "==", this.data.phone);
-      query.find().then(res => {
-        if (this.data.password == res[0].passwd) {
+      let query = new wx.BaaS.Query();
+      query.compare('user_id', '=', this.data.phone);
+      let Product = new wx.BaaS.TableObject("users");
+      Product.setQuery(query).find().then(res => {
+        if (this.data.password == res.data.objects[0].passwd) {
           wx.login({
-            success: function() {
+            success: function () {
               wx.showToast({
                 title: '登录成功',
                 icon: 'success',
@@ -42,38 +39,36 @@ Page({
               })
               //缓存用户信息
               try {
-                wx.setStorageSync('user_id', res[0].id)
-                wx.setStorageSync('phonenumber', res[0].phonenumber)
-                wx.setStorageSync('name', res[0].name)
-                wx.setStorageSync('manage', res[0].manage)
-                wx.setStorageSync('identity', res[0].identity)
+                wx.setStorageSync('user_id', res.data.objects[0].user_id)
+                wx.setStorageSync('manage', res.data.objects[0].manage)
+                wx.setStorageSync('identity', res.data.objects[0].identity)
               } catch (e) {
 
               }
-              if (res[0].manage == 0) { //学生登陆
+              if (res.data.objects[0].manage == 0) { //学生登陆
                 wx.switchTab({
                   url: '../function/function'
                 }),
-                wx.showToast({
-                  title: '欢迎使用教材管理系统',
-                  icon: 'none',
-                  duration: 2000
-                })
+                  wx.showToast({
+                    title: '欢迎使用教材管理系统',
+                    icon: 'none',
+                    duration: 2000
+                  })
                 console.log("学生登陆成功")
               }
-              if (res[0].manage == 5) { //教务员
+              if (res.data.objects[0].manage == 5) { //教务员
                 wx.switchTab({
                   url: '../function/function'
-                  
+
                 }),
-                wx.showToast({
-                  title: '欢迎使用教材管理系统',
-                  icon: 'success',
-                  duration: 2000
-                }),
-                console.log("教务员登陆成功")
+                  wx.showToast({
+                    title: '欢迎使用教材管理系统',
+                    icon: 'success',
+                    duration: 2000
+                  }),
+                  console.log("教务员登陆成功")
               }
-              if (res[0].manage == 3) { //教师
+              if (res.data.objects[0].manage == 3) { //教师
                 wx.switchTab({
                   url: '../function/function',
                 }),
@@ -82,11 +77,11 @@ Page({
                     icon: 'success',
                     duration: 2000
                   }),
-                console.log("教师登陆成功")
+                  console.log("教师登陆成功")
               }
             }
           })
-        } else(
+        } else (
           wx.showToast({
             title: '密码错误',
             icon: 'none',
@@ -100,7 +95,6 @@ Page({
           duration: 2000
         })
       });
-
     }
   }
 })

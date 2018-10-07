@@ -1,6 +1,9 @@
 {
   "pages": [
+
     "pages/login/login",
+    "pages/test/test",
+    "pages/bookList/bookList",
     "pages/plan/plan",
     "pages/choice/choice",
     "pages/suggestion/suggestion",
@@ -10,7 +13,6 @@
     "pages/bookmessage/bookmessage",
     "pages/teacherplan/teacherplan",
     "pages/moredetails/moredetails",
-    "pages/test/test",
     "pages/person/person",
     "pages/studentperson/student",
     "pages/ac/ac",
@@ -21,7 +23,6 @@
     "pages/stader/stader",
     "pages/yigou/yigou",
     "pages/shopcar/shopcar",
-    "pages/bookList/bookList",
     "pages/pingjiabiao/pingjiabiao",
     "pages/audit/audit",
     "pages/function/function"

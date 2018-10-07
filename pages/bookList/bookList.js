@@ -1,11 +1,23 @@
 //var Bmob = require('../../utils/bmob.js');
+
 Page({
   data: {
     book:[],
+    message:[],
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-    this.queryAllBorrowBooks();
+    let query = new wx.BaaS.Query()
+    let MyTableObject = new wx.BaaS.TableObject(53564)
+    MyTableObject.setQuery(query).find().then(res => {
+      // success
+      this.setData({
+        book: res.data
+      })
+      console.log(res.data)
+    }, err => {
+      // err
+    })
   },
   onReady: function () {
     // 页面渲染完成
@@ -23,39 +35,5 @@ Page({
     wx.navigateTo({
       url: '../moredetails/moredetails',
     })
-
   },
-  queryAllBorrowBooks: function () {
-    var that = this;
-    const query = Bmob.Query("textbook_info");
-    query.find().then(res => {
-      console.log(res)
-      that.setData({
-        book:res
-      })
-    });
-  },
-  queryOneBook: function (key) {
-    var that = this;
-    var inputMsg = that.data.inputValue;
-    var options = {
-      url: config.clubApi.list,
-      data: {
-        appkey: config.appKey,
-        type: 'bookLibrary',
-        key: key
-      }
-    };
-
-    util.request(options, (res, err) => {
-      var books = [];
-      for (var i = 0; i < res.data.result.length; i++) {
-        books.push(res.data.result[i].value);
-      }
-      that.setData({
-        bookList: books
-      });
-    });
-
-  }
 })
