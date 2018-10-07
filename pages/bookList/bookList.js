@@ -1,5 +1,3 @@
-//var Bmob = require('../../utils/bmob.js');
-
 Page({
   data: {
     book:[],
@@ -8,8 +6,8 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     let query = new wx.BaaS.Query()
-    let MyTableObject = new wx.BaaS.TableObject(53564)
-    MyTableObject.setQuery(query).find().then(res => {
+    let bookList = new wx.BaaS.TableObject("book_info")
+    bookList.find().then(res => {
       // success
       this.setData({
         book: res.data

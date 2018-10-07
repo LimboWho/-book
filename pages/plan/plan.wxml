@@ -3,8 +3,19 @@
   <view class="page__bd page__bd_spacing">
     <view class="weui-cells__title">教学计划</view>
   </view>
-
   <view class="weui-cells weui-cells_after-title">
+
+   <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">课程名称:</view>
+        </view>
+        <view class="weui-cell__bd">
+        <input name="classname" class="weui-input" placeholder="请输入课程名称" />
+      </view>
+    </view>
+
+
+  
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
         <view class="weui-label">周次:</view>
@@ -13,6 +24,8 @@
         <input name="weekly" class="weui-input" placeholder="请输入周数" />
       </view>
     </view>
+
+
 
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
@@ -66,9 +79,9 @@
     </view>
     
 
-        <view class="weui-btn-area">
+        <!-- <view class="weui-btn-area">
       <button class="weui-btn" type="primary"bindtap="clickCheck2">查看所录信息</button>
-    </view>
+    </view> -->
 
 
   </view>
@@ -81,7 +94,9 @@
     <text>录入结束后返回首页\n</text>
       <text>您的教学计划如下：</text>
     </view>
-<view>
+    <view>
+      <text>课程名称：</text>{{classname}}</view>
+    <view>
       <text>周次：</text>{{weekly}}</view>
     <view>
       <text>教学内容：</text>{{content}}</view>
